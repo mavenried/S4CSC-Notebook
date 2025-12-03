@@ -1,0 +1,7 @@
+[book]
+title = "S4 CSC"
+authors = ["Joseph Chacko"]
+language = "en"
+
+[output.html]
+mathjax-support = true
