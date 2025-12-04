@@ -115,3 +115,62 @@ The answer would be \\(0101011111 = 10101111\\)
 <img src="./assets/tod/language-acceptor.png">
 </details>
 <hr>
+
+#### Q: Design an FSA for accepting \\(L = \\{a^nb : n \ge 0\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/le_0.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting \\(L = \\{a^nb : n \ge 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/le_1.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting \\(L = \\{ab*\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/abstar.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting \\(\Sigma^*\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/sigmastar.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting \\(\Sigma^+\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/sigmaplus.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting \\(L = \\{(ab)^n\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/abn.png"><br>
+  Or more consise,<br>
+<img src="./assets/tod/abn-alt.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting strings with length divisible by 3 on \\(\Sigma = \\{a, b\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/len_div_3.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting strings with length 3 on \\(\Sigma = \\{a, b\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/len_3.png">
+</details>
+<hr>
+
