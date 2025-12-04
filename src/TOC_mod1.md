@@ -1,6 +1,6 @@
-## Module 1 - Formal Languages Theory and Regular Languages
+# Module 1 - Formal Languages Theory and Regular Languages
 
-### Definitions
+## Definitions
 | Item             | Definition      |
 | ---------------- | --------------- |
 | Natural Language | Human Languages |
@@ -8,14 +8,14 @@
 | Alphabet         | Fundamental unit of a language|
 | Sigma            | Set of Alphabet|
 
-#### Example -
+### Example -
 For a language defined as \\[ \Sigma = \\{a, b, c\\} \\] There would be many strings like `caa`, `abbc`, `ab`, etc.
 
-### \\(\Sigma^* \\) and \\(\Sigma^+ \\)
-\\(\Sigma^* \\) is defined as the set of all alphabet. This includes a special string called \\(\epsilon\\), which is a string of zero length.
+## \\(\Sigma^* \\) and \\(\Sigma^+ \\)
+\\(\Sigma^* \\) is defined as the set of all strings that can be created from \\(\Sigma\\). This includes a special string called \\(\epsilon\\), which is a string of zero length.
 \\(\Sigma^+ \\) is the set of all alphabet without including \\(\epsilon\\).<br>
 
-ie. \\( \Sigma^+ = \Sigma^* - \epsilon \\)
+ie. \\( \Sigma^+ = \Sigma^* - \\{\epsilon\\} \\)
 
 ### Questions
 #### Q: Set of all strings formed from  = `{a, b}` <br>
@@ -84,7 +84,7 @@ A: The set could be
  </details>
 <hr>
 
-### Regular Languages & Finite State Automata.
+## Regular Languages & Finite State Automata.
 FSA can be configured in 2 ways.
 1) As a language acceptor.
 2) As a language transducer.
