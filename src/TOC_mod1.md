@@ -174,3 +174,161 @@ The answer would be \\(0101011111 = 10101111\\)
 </details>
 <hr>
 
+#### Q: A language \\(L = \\{w:w \in \\{0, 1\\}\\}\\) such that the second symbol is 0 and the 4th is 1.
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/2is0-4is1.png">
+</details>
+<hr>
+
+#### Q: Design an DFA for accepting strings that have exactly four \\(1\\) on \\(\Sigma = \\{0, 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/4-ones.png">
+</details>
+<hr>
+
+#### Q: Design an DFA for accepting strings on \\(L = \\{a^nb^m:m, n \ge 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/anbm.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting strings where the number of \\(0\\) are a multiple of 3 on \\(\Sigma = \\{0, 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/mul3.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting strings that end with \\(11\\) on \\(\Sigma = \\{0, 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/end11.png">
+</details>
+<hr>
+
+#### Q: Design an FSA for accepting strings with substring \\(bca\\) on \\(\Sigma = \\{a, b, c\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/bca-sub.png">
+</details>
+<hr>
+
+#### Q: Design an DFA for accepting strings with 3 consecutive \\(0\\) on \\(\Sigma = \\{0, 1\\}\\)
+<details>
+ <summary>Answer</summary><br>
+<img src="./assets/tod/3con0.png">
+</details>
+<hr>
+
+## DFA
+A deterministic finite state automaton can be defined as a 5-tuple.
+\\[M = (Q, \Sigma, \delta, q_0, F)\\]
+|Symbol|Meaning|
+|------|-------|
+| \\(Q\\) | Finite set of states.|
+| \\(\Sigma\\) | Finite set of input alphabet.|
+| \\(q_0\\) | The initial state, \\( q_0 \in Q\\)|
+| \\(F\\) | The set of all final states.|
+| \\(\delta\\) | Transition function, a mapping from \\(Q \times \Sigma \to Q\\)|
+
+> [!NOTE]
+><br> For instance, the transitions for \\(L=a^nb^m\\)<br>
+>
+>\\[
+>\delta(q_0, a) = q_1 \\\\
+>\delta(q_0, b) = D \\\\
+>\delta(q_1, a) = q_1 \\\\
+>\delta(q_1, b) = q_2 \\\\
+>\delta(q_2, a) = D \\\\
+>\delta(q_2, b) = q_2 \\\\
+>\delta(D, a) = D \\\\
+>\delta(D, b) = D \\\\
+>\\]
+
+### The \\(\hat{\delta}\\) operation.
+\\[\hat{\delta}(q, xa) = \delta(\hat{\delta}(q, x), a)\\]
+
+> [!NOTE]
+> \\(\hat{\delta}(q, \epsilon) = q \quad \forall \quad q \in Q\\) 
+
+## Language accepted by a DFA
+
+\\[L(M) = \\{w:w \in \Sigma^*,\quad \hat{\delta}(q_0, w) \in F \\}\\]
+
+### Questions 
+#### Q: Check if \\(110101\\) is accepted by the DFA
+\\(Q = \\{q_0, q_1, q_2, q_3\\}\\\\ \Sigma = \\{0, 1\\}\\\\ F = \\{q_0\\}\\)
+|\\(\delta\\)|\\(0\\)|\\(1\\)|
+|--|--|--|
+|\\(\rightarrow (q_0)\\)|\\(q_2\\)|\\(q_1\\)|
+|\\(q_1\\)|\\(q_3\\)|\\(q_0\\)|
+|\\(q_2\\)|\\(q_0\\)|\\(q_3\\)|
+|\\(q_3\\)|\\(q_1\\)|\\(q_2\\)|
+<details>
+ <summary>Answer</summary><br>
+
+\\(
+\hat{\delta}(q_0, 1) = q_1 \\\\
+\hat{\delta}(q_1, 11) = q_0 \\\\
+\hat{\delta}(q_0, 110) = q_2 \\\\
+\hat{\delta}(q_2, 1101) = q_3 \\\\
+\hat{\delta}(q_3, 11010) = q_1 \\\\
+\hat{\delta}(q_1, 110101) = q_0 \\\\
+\\)
+
+\\(q_0 \in F\\)
+\\(\therefore\\) the string \\(110101\\) is accepted.
+
+</details>
+<hr>
+
+#### Q: Check if \\(aabb\\) is accepted by \\(L=\\{a^nb^m\\}\\)
+<details>
+ <summary>Answer</summary><br>
+
+  
+|\\(\delta\\)|\\(0\\)|\\(1\\)|
+|--|--|--|
+|\\(\rightarrow q_0\\)|\\(q_1\\)|\\(D\\)|
+|\\(q_1\\)|\\(q_1\\)|\\(q_2\\)|
+|\\((q_2)\\)|\\(D\\)|\\(q_2\\)|
+|\\(D\\)|\\(D\\)|\\(D\\)|
+
+\\(
+\hat{\delta}(q_0, a) = q_1 \\\\
+\hat{\delta}(q_1, aa) = q_1 \\\\
+\hat{\delta}(q_1, aab) = q_2 \\\\
+\hat{\delta}(q_2, aabb) = q_2 \\\\
+\\)
+
+\\(q_2 \in F\\)
+\\(\therefore\\) the string \\(aabb\\) is accepted.
+
+</details>
+<hr>
+
+## Non Deterministic FSA (NFA)
+A non deterministic finite state automaton allows 0, 1 or more transitions from a state on the same input symbol.  
+
+> [!NOTE]
+> ie. In a DFA, the next state is uniquely determined.
+
+An NFA can be defined as a finite 5-tuple, 
+\\[M=(Q, \Sigma, \delta, q_0, F)\\]
+|Symbol|Meaning|
+|------|-------|
+| \\(Q\\) | Finite set of states.|
+| \\(\Sigma\\) | Finite set of input alphabet.|
+| \\(q_0\\) | The initial state, \\( q_0 \in Q\\)|
+| \\(F\\) | The set of all final states.|
+| \\(\delta\\) | Transition function, a mapping from \\(Q \times \Sigma \to 2^Q\\)|
+
+
+### Questions
+
+> [!TIP]
+> Will complete later. :)
+
