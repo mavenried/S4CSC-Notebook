@@ -1,4 +1,4 @@
-# Module 1 - Formal Languages Theory and Regular Languages
+# Module 1 - Formal Language Theory and Regular Languages
 
 ## Definitions
 | Item             | Definition      |
